@@ -19,23 +19,17 @@ import { ghcolors } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    maxHeight: "100vh",
-    maxWidth: "100vw",
     display: "flex",
-    height: "100%",
     flexDirection: "column",
     alignItems: "stretch",
     justifyContent: "flex-start",
     color: "#2E4355"
   },
   innerMain: {
-    maxHeight: "100%",
-    maxWidth: "100%",
-    margin: "-26px",
     display: "flex",
     margin: "0",
     flexDirection: "column",
-    alignItems: "stretch",
+    alignItems: "center",
     justifyContent: "flex-start",
     color: "#2E4355"
   },
@@ -46,7 +40,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: "#576877",
     backgroundSize: "cover",
     backgroundPosition: "center",
-    maxHeight: "20vw"
+    maxHeight: "20%"
   },
   avatar: {
     margin: theme.spacing(1),
@@ -62,7 +56,7 @@ const useStyles = makeStyles(theme => ({
   },
   typography: {
     color: "#2E4355",
-    fontSize: "1rem"
+    fontSize: "1%"
   },
   errorMessage: {
     color: "red"
@@ -148,25 +142,19 @@ export default function App() {
         display="flex"
         component="main"
         className={classes.innerMain}
+        direction="column"
       >
         <Grid
           item
-          container
           xs={12}
           justify="center"
           style={{
-            flex: "0 1 0"
+            flex: "1 1 1"
           }}
         >
           <Avatar className={classes.avatar}>
             <LockOpenIcon />
           </Avatar>
-        </Grid>
-
-        <Grid item xs={12} style={{ flex: "0 1 0" }}>
-          <Typography component="h3" variant="h3" align="center">
-            SAML Decoder
-          </Typography>
         </Grid>
 
         <Grid
@@ -176,10 +164,10 @@ export default function App() {
           justify="space-between"
           alignItems="stretch"
           xs={12}
-          style={{ flex: "10 0 auto" }}
+          style={{ flex: "10 1 auto" }}
         >
           <form className={classes.form} noValidate onSubmit={handleSubmit}>
-            <Grid item xs={12} style={{ flex: "10 0 auto" }}>
+            <Grid item xs={12} style={{ flex: "10 1 auto" }}>
               <Typography
                 component="h5"
                 variant="h5"
@@ -208,7 +196,7 @@ export default function App() {
                 multiline
                 style={{
                   fontFamily: "Monospace",
-                  fontSize: "1vmin"
+                  fontSize: "1%"
                 }}
                 onChange={handleSAMLChange}
               />
@@ -259,14 +247,14 @@ export default function App() {
                 minHeight="10vh"
                 maxWidth="100%"
                 marginTop="0rem"
-                marginBottom="1rem"
+                marginBottom=".5rem"
                 padding="0"
                 textAlign="left"
               >
                 <Typography
                   variant="body1"
                   fontFamily="Monospace"
-                  style={{ fontSize: "1.25vmin" }}
+                  style={{ fontSize: ".75vmin" }}
                 >
                   {deflatedSaml ? deflatedSaml : ""}
                 </Typography>
@@ -289,7 +277,7 @@ export default function App() {
                 minHeight="20vh"
                 marginTop="0rem"
                 marginBottom="0rem"
-                fontSize="1.5vmin"
+                fontSize="1vmin"
               >
                 {decodedSaml ? (
                   <SyntaxHighlighter
