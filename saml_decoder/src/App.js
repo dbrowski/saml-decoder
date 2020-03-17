@@ -173,7 +173,7 @@ export default function App() {
                 variant="h5"
                 align="left"
                 style={{
-                  paddingBottom: "1vmin"
+                  paddingBottom: "1rem"
                 }}
               >
                 SAML Request{" "}
@@ -196,7 +196,7 @@ export default function App() {
                 multiline
                 style={{
                   fontFamily: "Monospace",
-                  fontSize: "1%"
+                  fontSize: "1vmin"
                 }}
                 onChange={handleSAMLChange}
               />
@@ -246,7 +246,6 @@ export default function App() {
                 height="100%"
                 minHeight="10vh"
                 maxWidth="100%"
-                marginTop="0rem"
                 marginBottom=".5rem"
                 padding="0"
                 textAlign="left"
@@ -254,7 +253,12 @@ export default function App() {
                 <Typography
                   variant="body1"
                   fontFamily="Monospace"
-                  style={{ fontSize: ".75vmin" }}
+                  style={{
+                    fontSize: ".75rem",
+                    whiteSpace: "wrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis"
+                  }}
                 >
                   {deflatedSaml ? deflatedSaml : ""}
                 </Typography>
@@ -275,9 +279,7 @@ export default function App() {
                 width="100%"
                 maxWidth="100%"
                 minHeight="20vh"
-                marginTop="0rem"
-                marginBottom="0rem"
-                fontSize="1vmin"
+                fontSize="1rem"
               >
                 {decodedSaml ? (
                   <SyntaxHighlighter
